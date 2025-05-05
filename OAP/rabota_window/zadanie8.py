@@ -1,30 +1,18 @@
 from tkinter import *
+import tkinter.messagebox as box
 
-class My_Button:
-    def __init__(self, mwindow, mtext="Цвет окна", mwidth=15, mheight=3, mbg="blue", mfg="red", mpdx=150, mpdy=50):
-        self.btn = Button(mwindow, text=mtext, width=mwidth, height=mheight, bg=mbg, fg=mfg)
-        self.btn.pack(padx=mpdx, pady=mpdy)
-
-    def setFunc(self, func):
-        self.btn['command'] = eval('self.' + func)
-
-    def color_change(self):
-        if window.cget("bg") == "yellow":  # Исправлено на '=='
-            window.configure(bg="green")
-        else:
-            window['bg'] = "yellow"
-
-    def m_exit(self):
-        exit()
+def dialog():
+    var = box.askyesno("Выбор действий", "Продолжаем ввод?")
+    if var:  # var будет True, если пользователь нажал "Да"
+        box.showinfo("Продолжение", "Продолжаем...")
+    else:
+        box.showwarning("Прекращение", "Выход...")
 
 window = Tk()
-window.title("Работа с кнопками")
+window.title("Вывод сообщений")
 window.geometry("500x300")
 
-btn_switch = My_Button(window)
-btn_switch.setFunc('color_change')
-
-btn_exit = My_Button(window, "Выход", 12, 3, "#ff0000", "green", 150, 20)
-btn_exit.setFunc('m_exit')
+btn = Button(window, text="Выбор решения", bg="red", fg="#00ff00", width=20, font=("Arial", 16, "bold"), command=dialog)
+btn.pack(padx=100, pady=100)
 
 window.mainloop()
