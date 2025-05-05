@@ -52,7 +52,7 @@ img {
 }
 
 .btn:hover {
-  background-color: #004d99;
+  background-color: #4da6ff;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
