@@ -1,2 +1,2 @@
 # end-
-lol xd html tam nu i python =)) xdd
+lol xd html tam nu i python =)) xdd hehe
